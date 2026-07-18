@@ -45,3 +45,62 @@ git commit -m "Delete filename.ext"
 git push origin main
 
 # Branching in Github
+# ----------------------------------------------------
+<!-- Step 1: Sync Your Local Repository -->
+<!-- Before creating a new branch, always update your local machine with the latest changes from GitHub -->
+<!-- Switch to your main branch -->
+git checkout main
+
+<!-- Fetch and download the latest updates -->
+git pull origin main
+<!-- -------------------------------------------- -->
+<!-- Step 2: Create and Switch to Your New Branch -->
+<!-- Create and immediately switch to the new branch -->
+git checkout -b your-branch-name
+<!-- (Alternatively, you can create a branch directly on the web interface by clicking the main dropdown menu on your GitHub repository page and typing a new name) -->
+<!-- -------------------------------------------- -->
+<!-- Step 3: Work and Commit Changes -->
+<!-- Track the modified files -->
+git add .
+
+<!-- Save a snapshot of your progress locally -->
+git commit -m "Add secure password validation to login form"
+<!-- -------------------------------------------- -->
+<!-- Step 4: Publish Your Branch to GitHub -->
+<!-- Push the branch up to GitHub -->
+git push origin your-branch-name
+
+<!-- -------------------------------------------- -->
+# Step 5: Merge via Pull Request (PR) -->
+<!-- Once your code is ready, merge it back into the main codebase using the GitHub Web Interface -->
+<!-- 
+1. Go to your repository on GitHub.com.
+2. Click the Compare & pull request button that automatically appears at the top.
+3. Add a description explaining your changes.
+4. Click Create pull request.
+5. Review the code changes (or have a teammate review them).
+6. Click Merge pull request and then Confirm merge to combine it with the main branch -->
+
+# Standard Terminal merge workflow 
+1. Switch back to your main target branch 
+git checkout main
+
+2. Pull the latest online updates to prevent conflicts
+git pull origin main
+
+3. Merge your feature branch into main
+git merge your-branch-name
+
+4. Upload the newly merged main branch back to GitHub
+git push origin main
+
+<!-- -------------------------------------------- -->
+<!-- Step 6: Clean Up -->
+<!-- After merging, delete the temporary branch to keep your environment tidy -->
+<!-- On GitHub: Click the Delete branch button directly inside the closed Pull Request page. -->
+<!-- On Local Machine: Switch back to main, pull the newly merged code, and erase the local copy: -->
+<!-- 
+    1. git checkout main
+    2. git pull origin main 
+    3. git branch -d your-branch-name 
+-->
